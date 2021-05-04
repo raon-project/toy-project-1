@@ -13,11 +13,8 @@ spring:
     properties:
       hibernate:
         format_sql: true
-  ## Put, Delete Method enable
-  mvc:
-    hiddenmethod:
-      filter:
-        enabled: true
+
+eventuatelocal.kafka.bootstrap.servers: localhost:9092
 
 logging:
   level:

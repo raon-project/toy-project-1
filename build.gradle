@@ -27,12 +27,16 @@ subprojects {
 
     repositories {
         mavenCentral()
+        mavenLocal()
     }
 
     dependencies {
 		compileOnly 'org.projectlombok:lombok'
 		annotationProcessor 'org.projectlombok:lombok'
 		implementation 'org.springframework.boot:spring-boot-starter-web'
+		
+		implementation 'com.rara:rara-eventuate:0.0.1-SNAPSHOT'
+		
 		testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	}	
 }

@@ -14,12 +14,14 @@ import com.rara.toy1.common.domain.base.BaseEntity;
 
 import lombok.AccessLevel;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "TB_ORDER_DETAIL")
 @Getter
+@EqualsAndHashCode(callSuper=false)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class OrderDetail extends BaseEntity {
 	
@@ -31,20 +33,20 @@ public class OrderDetail extends BaseEntity {
 	@JoinColumn(name="order_id")
 	private Order order;
 	
-	private Long productId;
+	private Long prodId;
 	
-	private int orderProductQuantity;
+	private int orderProdQuantity;
 	
-	private BigDecimal orderProductPrice;
+	private BigDecimal orderProdPrice;
 
 	@Builder
-	public OrderDetail(Long id, Order order, Long productId, int orderProductQuantity,
-			BigDecimal orderProductPrice) {
+	public OrderDetail(Long id, Order order, Long prodId, int orderProdQuantity,
+			BigDecimal orderProdPrice) {
 		this.id = id;
 		this.order = order;
-		this.productId = productId;
-		this.orderProductQuantity = orderProductQuantity;
-		this.orderProductPrice = orderProductPrice;
+		this.prodId = prodId;
+		this.orderProdQuantity = orderProdQuantity;
+		this.orderProdPrice = orderProdPrice;
 	}
 	
 }
